@@ -25,39 +25,26 @@ export default function useAuth() {
     });
     const name = response.data.name;
     const token = response.headers.authorization;
+    const refreshToken = response.headers["refresh-token"];
 
-    console.debug("name: ", name);
-    console.debug("token: ", token);
+    // console.debug("name: ", name);
+    // console.debug("token: ", token);
+    // console.debug("refreshToken: ", refreshToken);
 
     localStorage.setItem("name", JSON.stringify(name));
     localStorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("refresh-token", JSON.stringify(refreshToken));
+
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     setAuthenticated(true);
-    // history.push("/home");
-
-    /////////////////////
-    // const {
-    //   data: { name },
-    // } = await api.post("auth/sign-in", {
-    //   email,
-    //   password,
-    // });
-
-    // localStorage.setItem("name", JSON.stringify(name));
-    // console.debug("autorizacao", name.headers.Authorization);
-    // console.debug("data", name);
-
-    // // localStorage.setItem("token", JSON.stringify(token));
-    // // api.defaults.headers.Authorization = `Bearer ${token}`;
-    // setAuthenticated(true);
-    // history.push("/users");
   }
 
   function handleLogout() {
     setAuthenticated(false);
     localStorage.removeItem("token");
     localStorage.removeItem("name");
+    localStorage.removeItem("refresh-token");
     api.defaults.headers.Authorization = undefined;
     history.push("/login");
   }
