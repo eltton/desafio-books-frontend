@@ -31,8 +31,8 @@ function Login() {
       history.push("/home");
 
       // console.log(response);
-    } catch (e) {
-      // console.log(e);
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
