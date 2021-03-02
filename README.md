@@ -11,7 +11,7 @@ Senha de Teste: 12341234
 
 
 
-## Tela: erro de login
+## Tela: Login / Mensagem erro
 ![](https://github.com/eltton/desafio-books-frontend/blob/main/readme/tela-de-erro.png)
 ## Tela: Dashboard
 ![](https://github.com/eltton/desafio-books-frontend/blob/main/readme/home.png)
