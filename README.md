@@ -26,6 +26,7 @@ Hooks
 Context API
 Styled Components
 Axios
+Yup
 
 ```
 
