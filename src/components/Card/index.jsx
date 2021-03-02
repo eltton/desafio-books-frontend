@@ -26,10 +26,7 @@ function Cards(props) {
         },
       });
       setBookData(data);
-      console.log(data.title);
     } catch (error) {}
-
-    // console.log(bookID);
   };
 
   return (

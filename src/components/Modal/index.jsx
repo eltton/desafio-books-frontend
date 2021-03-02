@@ -26,8 +26,6 @@ function Modal({ visible, onClose, data }) {
   return (
     visible && (
       <Container>
-        {console.log(data.imageUrl)}
-
         <CloseIconContainer onClick={onClose}>
           <CloseIconField>
             <CloseIcon />
