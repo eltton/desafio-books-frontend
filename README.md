@@ -23,7 +23,7 @@ Senha de Teste: 12341234
 ```sh
 React
 Hooks
-ContextAPI
+Context API
 Styled Components
 Axios
 
