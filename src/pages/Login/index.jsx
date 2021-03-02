@@ -77,31 +77,6 @@ function Login() {
           </InputContainer>
         </Form>
         {loginError && <Error>Email e/ou senha incorretos.</Error>}
-
-        {/* <form>
-          <label htmlFor="email">Email </label>
-          <input
-            name="email"
-            type="text"
-            id="email"
-            onChange={(event) => setEmail(event.target.value)}
-          ></input>
-          <br />
-          <br />
-
-          <label htmlFor="password">Senha </label>
-          <input
-            name="password"
-            type="password"
-            id="password"
-            autoComplete="off"
-            onChange={(event) => setPassword(event.target.value)}
-          ></input>
-          <br />
-          <br />
-
-          <input type="submit" value="Entrar" onClick={handleSubmit} />
-        </form> */}
       </LoginContainer>
     </Container>
   );

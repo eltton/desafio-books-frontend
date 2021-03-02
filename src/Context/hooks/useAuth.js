@@ -27,10 +27,6 @@ export default function useAuth() {
     const token = response.headers.authorization;
     const refreshToken = response.headers["refresh-token"];
 
-    // console.debug("name: ", name);
-    // console.debug("token: ", token);
-    // console.debug("refreshToken: ", refreshToken);
-
     localStorage.setItem("name", JSON.stringify(name));
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("refresh-token", JSON.stringify(refreshToken));

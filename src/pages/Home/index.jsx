@@ -33,7 +33,6 @@ export default function Home() {
     (async () => {
       const responseToken = await getToken();
       await getBooks(responseToken);
-      // await updateToken(responseToken);
       setUser(JSON.parse(localStorage.getItem("name")));
     })();
   }, []);
@@ -46,48 +45,11 @@ export default function Home() {
     }
   };
 
-  // const updateToken = async (responseToken) => {
-  //   api.defaults.headers.Authorization = `Bearer ${JSON.parse(
-  //     responseToken.token
-  //   )}`;
-  //   try {
-  //     const response = await api.post("auth/refresh-token", {
-  //       refreshToken: `${JSON.parse(responseToken.refreshToken)}`,
-  //     });
-
-  //     localStorage.setItem(
-  //       "token",
-  //       JSON.stringify(response.headers.authorization)
-  //     );
-  //     localStorage.setItem(
-  //       "refresh-token",
-  //       JSON.stringify(response.headers["refresh-token"])
-  //     );
-
-  //     const updateToken = await getToken();
-  //     await getBooks(updateToken);
-  //   } catch (error) {
-  //     throw new Error(error);
-  //   }
-  // };
-
-  // const getRefreshToken = async (refreshToken) => {
-  //   try {
-  //     return await api.post("auth/refresh-token", {
-  //       // Authorization: `Bearer ${JSON.parse(refreshToken.token)}`,
-  //       refreshToken: JSON.parse(refreshToken.refreshToken),
-  //     });
-  //   } catch (err) {
-  //     handleLogout();
-  //   }
-  // };
-
   const getBooks = async (responseToken) => {
     try {
       const { data } = await api.get("books", {
         headers: {
           Authorization: `Bearer ${JSON.parse(responseToken.token)}`,
-          // "refresh-token": `Bearer ${JSON.parse(responseToken.refreshToken)}`,
         },
         params: {
           page,
@@ -97,11 +59,7 @@ export default function Home() {
       setPageLenght(Math.ceil(data.totalPages));
       setBooksData(data);
     } catch (err) {
-      // const newToken = await getRefreshToken(responseToken);
       handleLogout();
-      // await getBooks(newToken);
-      // await updateToken(responseToken); //chamando
-      // throw new Error(err);
     }
   };
 

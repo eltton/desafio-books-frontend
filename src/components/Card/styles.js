@@ -26,8 +26,6 @@ export const BoxInfo = styled.div`
   flex-direction: column;
   max-width: 244px;
   max-height: 130px;
-  /* border: solid 2px green; */
-  /* margin: 19px 0px 19px 0px; */
 `;
 
 export const BookImg = styled.img`
@@ -47,12 +45,8 @@ export const BookInfo = styled.div`
 
   width: 100%;
   height: 122px;
-  /* margin-top: 16px; */
-  /* margin-left: 16px; */
 `;
 export const BookTitle = styled.div`
-  /* width: 127px; */
-  /* height: 20px; */
   color: #333333;
   font-family: "Heebo", sans-serif;
   font-weight: 500;
@@ -72,12 +66,8 @@ export const BookDetails = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  /* height: 60px; */
-  width: 100%;
-  /* margin-bottom: 16px; */
 
-  /* margin-left: 0; */
-  /* border: solid 2px green; */
+  width: 100%;
 `;
 export const BookSpan = styled.span`
   font-family: "Heebo", sans-serif;

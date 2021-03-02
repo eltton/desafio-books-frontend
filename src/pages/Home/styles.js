@@ -25,8 +25,6 @@ export const CardsBox = styled.div`
 
   padding: 1rem;
   place-items: center;
-  /* 
-  border: solid 5px red; */
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, 280px);
@@ -49,8 +47,6 @@ export const Header = styled.div`
   height: 40px;
   margin: 42px;
 
-  /* border: solid 2px green; */
-
   @media (min-width: 300px) {
     width: 270px;
   }
@@ -66,9 +62,6 @@ export const Header = styled.div`
   @media (min-width: 1200px) {
     width: 1150px;
   }
-  /* @media (min-width: 1600px) {
-    width: 1400px;
-  } */
 `;
 
 export const LogoutContainer = styled.div`
@@ -104,7 +97,6 @@ export const Logo = styled.div`
   margin-right: 16px;
 `;
 export const Welcome = styled.div`
-  /* border: solid 2px blue; */
   @media (max-width: 600px) {
     display: none;
   }
@@ -126,7 +118,6 @@ export const Button = styled.div`
   margin: 0px 0px 0px 16px;
 
   @media (max-width: 600px) {
-    /* position: absolute; */
     margin: 0;
   }
 `;
@@ -139,15 +130,8 @@ export const ButtonContainer = styled.div`
   position: relative;
   margin-bottom: 20px;
 
-  /* border: solid 2px green; */
-
-  /* @media (max-width: 600px) {
-    justify-content: space-between;
-  } */
-
   @media (min-width: 300px) {
     width: 200px;
-    /* justify-content: center; */
 
     justify-content: space-between;
   }
@@ -167,10 +151,7 @@ export const ButtonContainer = styled.div`
     justify-content: flex-end;
   }
 `;
-export const ButtonLeft = styled(FiChevronLeft)`
-  /* border: solid 2px pink; */
-  /* float: left; */
-`;
+export const ButtonLeft = styled(FiChevronLeft)``;
 export const ButtonRight = styled(FiChevronRight)``;
 export const Pagination = styled.div`
   @media (max-width: 600px) {

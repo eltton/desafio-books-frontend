@@ -49,8 +49,6 @@ export const CloseIconField = styled.div`
 `;
 
 export const ModalWindow = styled.div`
-  /* border: solid 5px yellow; */
-
   height: 608px;
   margin-bottom: 60px;
   width: 769px;
@@ -61,8 +59,6 @@ export const ModalWindow = styled.div`
 
     height: 100%;
     width: 288px;
-
-    /* overflow-y: auto; */
     top: 50px;
     margin-bottom: 50px;
     max-height: 860px;
@@ -70,8 +66,6 @@ export const ModalWindow = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  /* border: solid 5px darkblue; */
-
   display: flex;
   background-color: #ffffff;
   border-radius: 4px;
@@ -86,7 +80,6 @@ export const ModalContainer = styled.div`
 `;
 
 export const ImageBookContainer = styled.img`
-  /* border: solid 5px blue; */
   width: 60%;
   height: 100%;
 
@@ -94,13 +87,11 @@ export const ImageBookContainer = styled.img`
 
   @media (max-width: 800px) {
     width: 100%;
-    /* height: 100%; */
     max-height: 350px;
     padding: 25px;
   }
 `;
 export const BookInfo = styled.div`
-  /* border: solid 5px red; */
   width: 50%;
   height: 100%;
   padding: 48px;
