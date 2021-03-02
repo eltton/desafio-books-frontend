@@ -1,13 +1,27 @@
 import React, { useState, useContext } from "react";
-
 import { useHistory } from "react-router-dom";
 import loginSchema from "../../commons/loginSchema";
 import { Context } from "../../Context/AuthContext";
+
+import {
+  Container,
+  Title,
+  LoginContainer,
+  HeaderContainer,
+  LogoContainer,
+  InputContainer,
+  Input,
+  Label,
+  InputButton,
+  Form,
+  Error,
+} from "./styles";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const [loginError, setloginError] = useState(false);
 
   const { /*authenticated,*/ handleLogin } = useContext(Context);
 
@@ -24,45 +38,72 @@ function Login() {
     try {
       const requestBody = { email, password };
       await validateLoginSchema(requestBody);
-
-      // console.log(email + "  " + password);
-
       await handleLogin(email, password);
+      setloginError(false);
       history.push("/home");
-
-      // console.log(response);
     } catch (error) {
-      console.log(error.message);
+      setloginError(true);
     }
   }
 
   return (
-    <div>
-      <form>
-        <label htmlFor="email">Email </label>
-        <input
-          name="email"
-          type="text"
-          id="email"
-          onChange={(event) => setEmail(event.target.value)}
-        ></input>
-        <br />
-        <br />
+    <Container>
+      <LoginContainer>
+        <HeaderContainer>
+          <LogoContainer />
+          <Title>Books</Title>
+        </HeaderContainer>
+        <Form>
+          <InputContainer>
+            <Label htmlFor="email">Email </Label>
+            <Input
+              name="email"
+              type="text"
+              id="email"
+              onChange={(event) => setEmail(event.target.value)}
+            ></Input>
+          </InputContainer>
 
-        <label htmlFor="password">Senha </label>
-        <input
-          name="password"
-          type="password"
-          id="password"
-          autoComplete="off"
-          onChange={(event) => setPassword(event.target.value)}
-        ></input>
-        <br />
-        <br />
+          <InputContainer>
+            <Label htmlFor="password">Senha </Label>
+            <Input
+              name="password"
+              type="password"
+              id="password"
+              autoComplete="off"
+              onChange={(event) => setPassword(event.target.value)}
+            ></Input>
+            <InputButton type="submit" value="Entrar" onClick={handleSubmit} />
+          </InputContainer>
+        </Form>
+        {loginError && <Error>Email e/ou senha incorretos.</Error>}
 
-        <input type="submit" value="Entrar" onClick={handleSubmit} />
-      </form>
-    </div>
+        {/* <form>
+          <label htmlFor="email">Email </label>
+          <input
+            name="email"
+            type="text"
+            id="email"
+            onChange={(event) => setEmail(event.target.value)}
+          ></input>
+          <br />
+          <br />
+
+          <label htmlFor="password">Senha </label>
+          <input
+            name="password"
+            type="password"
+            id="password"
+            autoComplete="off"
+            onChange={(event) => setPassword(event.target.value)}
+          ></input>
+          <br />
+          <br />
+
+          <input type="submit" value="Entrar" onClick={handleSubmit} />
+        </form> */}
+      </LoginContainer>
+    </Container>
   );
 }
 

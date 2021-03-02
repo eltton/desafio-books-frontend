@@ -87,3 +87,11 @@ export const BookSpan = styled.span`
   line-height: 20px;
   color: #999999;
 `;
+
+export const ModalContent = styled.div`
+  width: 500px;
+  height: 500px;
+  border: solid 5px green;
+  position: absolute;
+  z-index: 2999;
+`;

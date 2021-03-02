@@ -71,16 +71,16 @@ export default function Home() {
   //   }
   // };
 
-  const getRefreshToken = async (refreshToken) => {
-    try {
-      return await api.post("auth/refresh-token", {
-        // Authorization: `Bearer ${JSON.parse(refreshToken.token)}`,
-        refreshToken: JSON.parse(refreshToken.refreshToken),
-      });
-    } catch (err) {
-      handleLogout();
-    }
-  };
+  // const getRefreshToken = async (refreshToken) => {
+  //   try {
+  //     return await api.post("auth/refresh-token", {
+  //       // Authorization: `Bearer ${JSON.parse(refreshToken.token)}`,
+  //       refreshToken: JSON.parse(refreshToken.refreshToken),
+  //     });
+  //   } catch (err) {
+  //     handleLogout();
+  //   }
+  // };
 
   const getBooks = async (responseToken) => {
     try {
@@ -97,8 +97,9 @@ export default function Home() {
       setPageLenght(Math.ceil(data.totalPages));
       setBooksData(data);
     } catch (err) {
-      const newToken = await getRefreshToken(responseToken);
-      await getBooks(newToken);
+      // const newToken = await getRefreshToken(responseToken);
+      handleLogout();
+      // await getBooks(newToken);
       // await updateToken(responseToken); //chamando
       // throw new Error(err);
     }
@@ -149,6 +150,7 @@ export default function Home() {
             pageCount={book.pageCount}
             publisher={book.publisher}
             published={book.published}
+            bookID={book.id}
           />
         ))}
       </CardsBox>
